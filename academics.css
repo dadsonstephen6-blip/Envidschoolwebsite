@@ -1,0 +1,1370 @@
+
+/* =========================================================
+   ENVID SCHOOL — ACADEMICS PAGE
+   Same visual system as the Envid homepage + About page
+   ========================================================= */
+
+
+/* =========================================================
+   1. RESET & GENERAL
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+    color: #24364b;
+
+    background:
+        radial-gradient(
+            circle at 5% 10%,
+            rgba(174, 221, 248, 0.30),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 95% 25%,
+            rgba(247, 183, 211, 0.20),
+            transparent 30%
+        ),
+        #f8fbfd;
+
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* =========================================================
+   2. GENERAL CONTAINER
+   ========================================================= */
+
+.academics-container {
+    width: min(1120px, 88%);
+    margin: 0 auto;
+}
+
+.academics-label {
+    margin-bottom: 10px;
+
+    color: #df6b9f;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   3. NAVIGATION
+   ========================================================= */
+
+.academics-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    padding: 17px 0;
+}
+
+.academics-navbar {
+    width: min(1120px, 92%);
+
+    min-height: 66px;
+
+    margin: 0 auto;
+
+    padding: 10px 18px 10px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.63);
+
+    border: 1px solid rgba(255, 255, 255, 0.88);
+
+    border-radius: 19px;
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 12px 35px rgba(46, 83, 111, 0.08);
+}
+
+
+/* ---------- Logo ---------- */
+
+.academics-logo a {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.15;
+}
+
+.academics-logo span {
+    color: #1d344d;
+
+    font-size: 1.15rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.academics-logo small {
+    margin-top: 3px;
+
+    color: #8795a5;
+
+    font-size: 0.53rem;
+
+    letter-spacing: 0.7px;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.academics-nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.academics-nav-links a {
+    display: block;
+
+    padding: 8px 13px;
+
+    color: #53667a;
+
+    font-size: 0.82rem;
+    font-weight: 500;
+
+    border-radius: 10px;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.academics-nav-links a:hover {
+    color: #df6b9f;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    transform: translateY(-1px);
+}
+
+.academics-nav-links a.active {
+    color: #df6b9f;
+
+    background: rgba(255, 255, 255, 0.75);
+}
+
+
+/* ---------- Mobile Menu ---------- */
+
+.academics-menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #263b51;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 12px;
+
+    font-size: 1.1rem;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.academics-menu-toggle:hover {
+    background: white;
+}
+
+
+/* =========================================================
+   4. ACADEMICS HERO
+   ========================================================= */
+
+.academics-hero {
+    position: relative;
+
+    width: min(1120px, 94%);
+
+    min-height: 450px;
+
+    margin: 125px auto 0;
+
+    padding: 80px 70px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(220, 241, 255, 0.90),
+            rgba(255, 231, 243, 0.84)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 22px 60px rgba(55, 91, 116, 0.09);
+}
+
+
+/* Decorative shapes */
+
+.academics-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    right: -110px;
+    top: -130px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    border-radius: 50%;
+
+    filter: blur(3px);
+}
+
+.academics-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    left: 38%;
+    bottom: -130px;
+
+    background: rgba(255, 184, 216, 0.22);
+
+    border-radius: 50%;
+
+    filter: blur(20px);
+}
+
+
+/* Hero content */
+
+.academics-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 720px;
+}
+
+.academics-hero-content h1 {
+    margin-bottom: 17px;
+
+    color: #1d344d;
+
+    font-size: clamp(2.7rem, 5vw, 4.2rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+.academics-hero-content > p:last-child {
+    max-width: 590px;
+
+    color: #68798a;
+
+    font-size: 0.94rem;
+}
+
+
+/* =========================================================
+   5. ACADEMIC INTRODUCTION
+   ========================================================= */
+
+.academics-introduction {
+    padding: 110px 0;
+}
+
+.academics-introduction-container {
+    display: grid;
+
+    grid-template-columns: 0.95fr 1.05fr;
+
+    align-items: center;
+
+    gap: 75px;
+}
+
+
+/* ---------- Introduction Image ---------- */
+
+.academics-introduction-image {
+    padding: 9px;
+
+    background: rgba(255, 255, 255, 0.56);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 27px;
+
+    box-shadow:
+        0 20px 50px rgba(57, 93, 118, 0.09);
+}
+
+.academics-introduction-image img {
+    width: 100%;
+
+    height: 390px;
+
+    object-fit: cover;
+
+    border-radius: 19px;
+}
+
+
+/* ---------- Introduction Content ---------- */
+
+.academics-introduction-content {
+    max-width: 550px;
+}
+
+.academics-introduction-content h2 {
+    margin-bottom: 19px;
+
+    color: #1d344d;
+
+    font-size: clamp(2rem, 3.6vw, 2.8rem);
+
+    line-height: 1.15;
+
+    letter-spacing: -1px;
+}
+
+.academics-introduction-content p:not(.academics-label) {
+    margin-bottom: 15px;
+
+    color: #6d7d8f;
+
+    font-size: 0.87rem;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   6. SECTION HEADINGS
+   ========================================================= */
+
+.academics-section-heading {
+    max-width: 680px;
+
+    margin: 0 auto 52px;
+
+    text-align: center;
+}
+
+.academics-section-heading h2 {
+    margin-bottom: 13px;
+
+    color: #1d344d;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    line-height: 1.15;
+
+    letter-spacing: -1px;
+}
+
+.academics-section-heading > p:last-child {
+    color: #718195;
+
+    font-size: 0.87rem;
+}
+
+
+/* =========================================================
+   7. SCHOOL LEVELS
+   ========================================================= */
+
+.academics-levels {
+    padding: 105px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(237, 247, 253, 0.55),
+            rgba(255, 245, 250, 0.55)
+        );
+}
+
+.academics-levels-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+/* ---------- Level Cards ---------- */
+
+.academics-level-card {
+    position: relative;
+
+    padding: 34px 30px;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.60);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 23px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 15px 40px rgba(60, 96, 122, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.academics-level-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 22px 45px rgba(60, 96, 122, 0.10);
+}
+
+
+/* Top accent */
+
+.academics-level-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a9dcf8,
+            #e6a5c3
+        );
+}
+
+
+/* ---------- Icons ---------- */
+
+.academics-level-icon {
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eef8ff;
+
+    border-radius: 14px;
+
+    font-size: 1.2rem;
+}
+
+.academics-level-card:nth-child(2)
+.academics-level-icon {
+    background: #fff0f6;
+}
+
+.academics-level-card:nth-child(3)
+.academics-level-icon {
+    background: #eef7ff;
+}
+
+
+/* ---------- Card Text ---------- */
+
+.academics-level-card h3 {
+    margin-bottom: 10px;
+
+    color: #263d54;
+
+    font-size: 1.1rem;
+}
+
+.academics-level-card > p {
+    margin-bottom: 18px;
+
+    color: #728294;
+
+    font-size: 0.81rem;
+
+    line-height: 1.8;
+}
+
+
+/* ---------- Lists ---------- */
+
+.academics-level-card ul {
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(125, 153, 170, 0.14);
+}
+
+.academics-level-card li {
+    position: relative;
+
+    margin-bottom: 8px;
+
+    padding-left: 15px;
+
+    color: #758597;
+
+    font-size: 0.74rem;
+}
+
+.academics-level-card li::before {
+    content: "•";
+
+    position: absolute;
+
+    left: 0;
+
+    color: #df6b9f;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   8. LEARNING AREAS
+   ========================================================= */
+
+.academics-subjects {
+    padding: 110px 0;
+
+    background:
+        radial-gradient(
+            circle at 90% 40%,
+            rgba(255, 193, 219, 0.20),
+            transparent 30%
+        );
+}
+
+.academics-subjects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+
+/* ---------- Subject Cards ---------- */
+
+.academics-subject-card {
+    padding: 27px 24px;
+
+    background: rgba(255, 255, 255, 0.58);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 13px 35px rgba(60, 95, 120, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.academics-subject-card:hover {
+    transform: translateY(-5px);
+
+    background: rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        0 20px 42px rgba(60, 95, 120, 0.08);
+}
+
+
+/* ---------- Subject Icon ---------- */
+
+.academics-subject-icon {
+    width: 46px;
+    height: 46px;
+
+    margin-bottom: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eef8ff;
+
+    border-radius: 13px;
+
+    font-size: 1.05rem;
+}
+
+.academics-subject-card:nth-child(even)
+.academics-subject-icon {
+    background: #fff0f6;
+}
+
+
+/* ---------- Subject Text ---------- */
+
+.academics-subject-card h3 {
+    margin-bottom: 8px;
+
+    color: #263d54;
+
+    font-size: 0.98rem;
+}
+
+.academics-subject-card p {
+    color: #788797;
+
+    font-size: 0.76rem;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   9. LEARNING EXPERIENCE
+   ========================================================= */
+
+.academics-experience {
+    padding: 110px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239, 248, 253, 0.55),
+            rgba(255, 246, 250, 0.55)
+        );
+}
+
+.academics-experience-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+/* ---------- Experience Content ---------- */
+
+.academics-experience-content {
+    max-width: 530px;
+}
+
+.academics-experience-content h2 {
+    margin-bottom: 18px;
+
+    color: #1d344d;
+
+    font-size: clamp(2rem, 3.6vw, 2.8rem);
+
+    line-height: 1.15;
+
+    letter-spacing: -1px;
+}
+
+.academics-experience-content > p:not(.academics-label) {
+    margin-bottom: 23px;
+
+    color: #6d7d8f;
+
+    font-size: 0.87rem;
+
+    line-height: 1.85;
+}
+
+
+/* ---------- Experience List ---------- */
+
+.academics-experience-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+.academics-experience-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 15px;
+
+    background: rgba(255, 255, 255, 0.56);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 13px;
+}
+
+.academics-experience-item span {
+    width: 24px;
+    height: 24px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #df6b9f;
+
+    background: #fff0f6;
+
+    border-radius: 50%;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.academics-experience-item p {
+    color: #68798a;
+
+    font-size: 0.76rem;
+}
+
+
+/* =========================================================
+   10. VIDEO
+   ========================================================= */
+
+.academics-experience-image {
+    width: 100%;
+
+    padding: 9px;
+
+    background: rgba(255, 255, 255, 0.56);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 27px;
+
+    box-shadow:
+        0 20px 50px rgba(57, 93, 118, 0.09);
+
+    overflow: hidden;
+}
+
+.academics-experience-image video {
+    width: 100%;
+
+    height: 390px;
+
+    object-fit: cover;
+
+    border-radius: 19px;
+
+    background: #dfeaf0;
+}
+
+
+/* =========================================================
+   11. CTA
+   ========================================================= */
+
+.academics-cta {
+    padding: 105px 0;
+}
+
+.academics-cta-content {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 70px 30px;
+
+    text-align: center;
+
+    border-radius: 29px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(220, 241, 255, 0.88),
+            rgba(255, 230, 241, 0.84)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 22px 55px rgba(64, 98, 123, 0.08);
+}
+
+
+/* Decorative circle */
+
+.academics-cta-content::before {
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    right: -90px;
+    top: -100px;
+
+    background: rgba(255, 255, 255, 0.4);
+
+    border-radius: 50%;
+}
+
+.academics-cta-content::after {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    left: -70px;
+    bottom: -80px;
+
+    background: rgba(255, 190, 218, 0.18);
+
+    border-radius: 50%;
+}
+
+.academics-cta-content > * {
+    position: relative;
+
+    z-index: 2;
+}
+
+.academics-cta-content h2 {
+    margin-bottom: 14px;
+
+    color: #20374f;
+
+    font-size: clamp(2rem, 4vw, 2.8rem);
+
+    line-height: 1.15;
+
+    letter-spacing: -1px;
+}
+
+.academics-cta-content > p:not(.academics-label) {
+    max-width: 560px;
+
+    margin: 0 auto 27px;
+
+    color: #718092;
+
+    font-size: 0.87rem;
+}
+
+
+/* ---------- CTA Button ---------- */
+
+.academics-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 45px;
+
+    padding: 11px 21px;
+
+    color: white;
+
+    background: #df6b9f;
+
+    border-radius: 12px;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    box-shadow:
+        0 10px 25px rgba(223, 107, 159, 0.22);
+
+    transition: 0.3s ease;
+}
+
+.academics-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 32px rgba(223, 107, 159, 0.30);
+}
+
+
+/* =========================================================
+   12. FOOTER
+   ========================================================= */
+
+.academics-footer {
+    padding: 70px 0 25px;
+
+    background: #edf5f9;
+
+    border-top: 1px solid rgba(202, 220, 230, 0.5);
+}
+
+.academics-footer-grid {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1.4fr 1fr;
+
+    gap: 40px;
+
+    padding-bottom: 45px;
+}
+
+
+/* ---------- Footer Headings ---------- */
+
+.academics-footer-column h3 {
+    margin-bottom: 12px;
+
+    color: #20374f;
+
+    letter-spacing: 2px;
+}
+
+.academics-footer-column h4 {
+    margin-bottom: 14px;
+
+    color: #30465c;
+
+    font-size: 0.85rem;
+}
+
+
+/* ---------- Footer Text ---------- */
+
+.academics-footer-column p {
+    margin-bottom: 8px;
+
+    color: #718294;
+
+    font-size: 0.76rem;
+
+    line-height: 1.65;
+}
+
+
+/* ---------- Footer Links ---------- */
+
+.academics-footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.academics-footer-column ul a,
+.academics-social-links a {
+    color: #718294;
+
+    font-size: 0.76rem;
+
+    transition: 0.25s ease;
+}
+
+.academics-footer-column ul a:hover,
+.academics-social-links a:hover {
+    color: #df6b9f;
+}
+
+
+/* ---------- Social ---------- */
+
+.academics-social-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* ---------- Footer Bottom ---------- */
+
+.academics-footer-bottom {
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(148, 171, 186, 0.18);
+
+    text-align: center;
+}
+
+.academics-footer-bottom p {
+    color: #8b99a7;
+
+    font-size: 0.68rem;
+}
+
+
+/* =========================================================
+   13. TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    /* Navigation */
+
+    .academics-nav-links {
+        position: absolute;
+
+        top: 76px;
+        right: 4%;
+
+        width: 230px;
+
+        padding: 12px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        background: rgba(255, 255, 255, 0.84);
+
+        border: 1px solid rgba(255, 255, 255, 0.9);
+
+        border-radius: 18px;
+
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        box-shadow:
+            0 18px 45px rgba(49, 83, 108, 0.12);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition: 0.3s ease;
+    }
+
+    .academics-nav-links.active {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+    .academics-nav-links a {
+        width: 100%;
+
+        padding: 11px 13px;
+    }
+
+    .academics-menu-toggle {
+        display: flex;
+    }
+
+
+    /* Hero */
+
+    .academics-hero {
+        padding: 65px 55px;
+
+        min-height: 420px;
+    }
+
+
+    /* Content */
+
+    .academics-introduction-container,
+    .academics-experience-container {
+        gap: 45px;
+    }
+
+
+    /* Subject cards */
+
+    .academics-subjects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* Footer */
+
+    .academics-footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   14. MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .academics-container {
+        width: 90%;
+    }
+
+
+    /* ---------- Header ---------- */
+
+    .academics-header {
+        padding: 12px 0;
+    }
+
+    .academics-navbar {
+        min-height: 60px;
+
+        padding: 8px 12px 8px 17px;
+
+        border-radius: 16px;
+    }
+
+    .academics-logo span {
+        font-size: 1rem;
+    }
+
+    .academics-logo small {
+        font-size: 0.47rem;
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .academics-hero {
+        width: 94%;
+
+        min-height: 410px;
+
+        margin-top: 95px;
+
+        padding: 55px 27px;
+
+        border-radius: 25px;
+    }
+
+    .academics-hero-content h1 {
+        font-size: 2.6rem;
+
+        letter-spacing: -1.3px;
+    }
+
+    .academics-hero-content > p:last-child {
+        font-size: 0.84rem;
+    }
+
+
+    /* ---------- Introduction ---------- */
+
+    .academics-introduction {
+        padding: 80px 0;
+    }
+
+    .academics-introduction-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .academics-introduction-image {
+        padding: 7px;
+    }
+
+    .academics-introduction-image img {
+        height: 290px;
+    }
+
+
+    /* ---------- Levels ---------- */
+
+    .academics-levels {
+        padding: 80px 0;
+    }
+
+    .academics-levels-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .academics-level-card {
+        padding: 30px;
+    }
+
+
+    /* ---------- Subjects ---------- */
+
+    .academics-subjects {
+        padding: 80px 0;
+    }
+
+    .academics-subjects-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+    .academics-subject-card {
+        padding: 23px 17px;
+    }
+
+
+    /* ---------- Experience ---------- */
+
+    .academics-experience {
+        padding: 80px 0;
+    }
+
+    .academics-experience-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .academics-experience-image {
+        padding: 7px;
+    }
+
+    .academics-experience-image video {
+        height: 290px;
+    }
+
+
+    /* ---------- CTA ---------- */
+
+    .academics-cta {
+        padding: 80px 0;
+    }
+
+    .academics-cta-content {
+        padding: 55px 20px;
+
+        border-radius: 24px;
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    .academics-footer {
+        padding-top: 55px;
+    }
+
+    .academics-footer-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 30px;
+    }
+}
+
+
+/* =========================================================
+   15. SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .academics-hero {
+        min-height: 390px;
+
+        padding: 45px 22px;
+    }
+
+    .academics-hero-content h1 {
+        font-size: 2.25rem;
+    }
+
+
+    .academics-section-heading h2,
+    .academics-introduction-content h2,
+    .academics-experience-content h2 {
+        font-size: 1.9rem;
+    }
+
+
+    .academics-subjects-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .academics-footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
